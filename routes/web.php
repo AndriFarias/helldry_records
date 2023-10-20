@@ -26,4 +26,4 @@ Route::put('/artistas/editar', [ArtistaController::class, 'update']);
 
 Route::get('/artistas/excluir', [ArtistaController::class, 'destroy']);
 
-Route::get('/artistas', [ArtistaController::class, 'index'p]);
+Route::get('/artistas', [ArtistaController::class, 'index']);
