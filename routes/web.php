@@ -16,14 +16,14 @@ use App\Http\Controllers\ArtistaController;
 */
 
 
-Route::get('/', [LoginController::class, 'index']);
+Route::get('/', [LoginController::class, 'index'])->name('login');
 
-Route::get('/artistas/cadastrar', [ArtistaController::class, 'create']);
-Route::post('/artistas/cadastrar', [ArtistaController::class, 'store']);
+Route::get('/artistas/cadastrar', [ArtistaController::class, 'create'])->name('artistas.cadastrar');
+Route::post('/artistas/cadastrar', [ArtistaController::class, 'store'])->name('artistas.salvar');
 
-Route::get('/artistas/editar', [ArtistaController::class, 'edit']);
-Route::put('/artistas/editar', [ArtistaController::class, 'update']);
+Route::get('/artistas/editar', [ArtistaController::class, 'edit'])->name('artistas.editar');
+Route::put('/artistas/editar', [ArtistaController::class, 'update'])->name('artistas.atualizar');
 
-Route::get('/artistas/excluir', [ArtistaController::class, 'destroy']);
+Route::get('/artistas/excluir', [ArtistaController::class, 'destroy'])->name('artistas.excluir');
 
-Route::get('/artistas', [ArtistaController::class, 'index']);
+Route::get('/artistas', [ArtistaController::class, 'index'])->name('artistas');
