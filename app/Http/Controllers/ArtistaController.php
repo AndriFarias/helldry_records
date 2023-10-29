@@ -28,7 +28,9 @@ class ArtistaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados = $request->all();
+        Artista::create($dados);
+        return redirect()->route('artistas');
     }
 
     /**

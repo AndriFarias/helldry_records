@@ -17,14 +17,16 @@ class input extends Component
      public $id;
      public $value;
      public $type;
+     public $maxlength;
      
-    public function __construct($placeholder = null,$id = null, $name = null, $value = null, $type = 'text')
+    public function __construct($placeholder = null,$id = null, $name = null, $value = null, $type = 'text', $maxlength= 256)
     {
         $this->placeholder = $placeholder;
         $this->name = $name;
         $this->id = $id;
         $this->value = $value;
         $this->type = $type;
+        $this->maxlength = $maxlength;
     }
 
     /**
