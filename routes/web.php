@@ -16,7 +16,9 @@ use App\Http\Controllers\ArtistaController;
 */
 
 
-Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::get('/', [LoginController::class, 'index'])->name('login')->withoutMiddleware('auth');;
+Route::post('/', [LoginController::class, 'store'])->name('login.verificar')->withoutMiddleware('auth');;
+Route::get('/logout', [LoginController::class, 'destroy'])->name('logout');
 
 Route::get('/artistas/cadastrar', [ArtistaController::class, 'create'])->name('artistas.cadastrar');
 Route::post('/artistas/cadastrar', [ArtistaController::class, 'store'])->name('artistas.salvar');
