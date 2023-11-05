@@ -12,8 +12,12 @@ class ArtistaController extends Controller
      */
     public function index()
     {
-        return view('site.artistas.index');
+
+
+        $reg = Artista::all();
+        return view('site.artistas.index',compact('reg'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -60,8 +64,9 @@ class ArtistaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Artista $artista)
+    public function destroy(string $id)
     {
-        //
+        Artista::find($id)->delete();
+        return redirect()->route('artistas');
     }
 }

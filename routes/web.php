@@ -23,9 +23,11 @@ Route::get('/logout', [LoginController::class, 'destroy'])->name('logout');
 Route::get('/artistas/cadastrar', [ArtistaController::class, 'create'])->name('artistas.cadastrar');
 Route::post('/artistas/cadastrar', [ArtistaController::class, 'store'])->name('artistas.salvar');
 
-Route::get('/artistas/editar', [ArtistaController::class, 'edit'])->name('artistas.editar');
-Route::put('/artistas/editar', [ArtistaController::class, 'update'])->name('artistas.atualizar');
+Route::get('/artistas/visulizar/{id}', [ArtistaController::class, 'show'])->name('artistas.visualizar');
 
-Route::get('/artistas/excluir', [ArtistaController::class, 'destroy'])->name('artistas.excluir');
+Route::get('/artistas/editar/{id}', [ArtistaController::class, 'edit'])->name('artistas.editar');
+Route::put('/artistas/editar/{id}', [ArtistaController::class, 'update'])->name('artistas.atualizar');
+
+Route::get('/artistas/excluir/{id}', [ArtistaController::class, 'destroy'])->name('artistas.excluir');
 
 Route::get('/artistas', [ArtistaController::class, 'index'])->name('artistas');
