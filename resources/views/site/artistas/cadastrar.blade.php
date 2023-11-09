@@ -28,5 +28,6 @@
       <x-button message="Salvar" type="submit"></x-button>
     </form>
 </div>
+<x-a href="{{ route('artistas') }}" message="Voltar"></x-a>
 <x-a href="{{ route('logout') }}" message="Logout"></x-a>
 @endsection

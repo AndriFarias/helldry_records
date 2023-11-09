@@ -92,16 +92,19 @@ class ArtistaController extends Controller
             ];
     
             $validated = $request->validate([
-                'email' => 'required|unique:artistas|email',
+                'email' => [
+                    'required',
+                    Rule::unique('artistas')->ignore($id), 
+                    'email',
+                ],
             ], $messages);
     
             $dados = $request->all();
             Artista::find($id)->update($dados);
             return redirect()->route('artistas');
         } catch (\Illuminate\Validation\ValidationException $e) {
-            // Aqui você pode lidar com os erros de validação como quiser
+
             return redirect()->back()->withErrors($e->errors())->withInput();
-            
         }
     }
 

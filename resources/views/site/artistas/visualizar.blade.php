@@ -31,5 +31,6 @@
 
   
 </div>
+<x-a href="{{ route('artistas') }}" message="Voltar"></x-a>
 <x-a href="{{ route('logout') }}" message="Logout"></x-a>
 @endsection
