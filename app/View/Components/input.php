@@ -18,6 +18,7 @@ class input extends Component
      public $value;
      public $type;
      public $maxlength;
+
      
     public function __construct($placeholder = null,$id = null, $name = null, $value = null, $type = 'text', $maxlength= 256)
     {
@@ -27,6 +28,7 @@ class input extends Component
         $this->value = $value;
         $this->type = $type;
         $this->maxlength = $maxlength;
+
     }
 
     /**

@@ -16,7 +16,9 @@
      <x-input type="text" placeholder="Endereço" name="endereco" id="endereco" maxlength="256"></x-input>
 
      <x-input type="text" placeholder="Email" name="email" id="email"></x-input>
-
+        @error('email')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
      <x-input type="text" placeholder="Telefone" name="telefone" id="telefone" maxlength="32"></x-input>
 
      <x-input type="hidden" name="status" value="1" id="status"></x-input>

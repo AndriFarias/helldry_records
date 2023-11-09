@@ -31,5 +31,6 @@
     </table>
     </div>
     <br>
+    <x-a href="{{ route('artistas.cadastrar') }}" message="Cadastrar"></x-a>
     <x-a href="{{ route('logout') }}" message="Logout"></x-a>
 @endsection
