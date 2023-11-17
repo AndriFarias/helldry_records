@@ -1,2 +1,2 @@
 
-    <a href="{{ $href }}">{{ $message }}</a>
+    <a href="{{ $href }}" class="btn btn-{{ $cor }}">{{ $message }}</a>

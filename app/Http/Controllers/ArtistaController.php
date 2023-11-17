@@ -118,3 +118,4 @@ class ArtistaController extends Controller
     }
 }
 
+

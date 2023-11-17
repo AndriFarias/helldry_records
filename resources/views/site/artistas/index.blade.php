@@ -3,34 +3,40 @@
 @section('titulo','Lista de Artistas')
 
 @section('conteudo')
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10">
     <h1>Lista de Artistas</h1>
-<div>
-    <table>
+    </div>
+    <div class="col">
+    <x-a href="{{ route('artistas.cadastrar') }}" cor="success" message="Cadastrar"></x-a>
+    </div>   
+</div>
+    <div>
+    <table class="table">
         <thead>
             <tr>
-                <th>Nome</th>
-                <th>Nacionalidade</th>
-                <th>Status</th>
-                <th>Ações</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Nacionalidade</th>
+                <th scope="col">Status</th>
+                <th scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($reg as $artista)
-                <tr>
+                <tr scope="row">
                     <td>{{ $artista->nome }}</td>
                     <td>{{ $artista->nacionalidade }}</td>
                     <td>{{(isset($artista->status) AND $artista->status) ? 'Ativo' : 'Inativo'}}</</td>
                     <td>
-                    <x-a href="{{ route('artistas.visualizar',$artista->id) }}" message="Visualizar"></x-a>
-                    <x-a href="{{ route('artistas.editar',$artista->id) }}" message="Editar"></x-a>
-                    <x-a href="{{ route('artistas.excluir',$artista->id) }}" message="Excluir"></x-a>
+                    <x-a href="{{ route('artistas.visualizar',$artista->id) }}" message="Visualizar" cor="primary"></x-a>
+                    <x-a href="{{ route('artistas.editar',$artista->id) }}" message="Editar" cor="warning"></x-a>
+                    <x-a href="{{ route('artistas.excluir',$artista->id) }}" message="Excluir" cor="danger"></x-a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
     </div>
-    <br>
-    <x-a href="{{ route('artistas.cadastrar') }}" message="Cadastrar"></x-a>
-    <x-a href="{{ route('logout') }}" message="Logout"></x-a>
+    </div>
 @endsection

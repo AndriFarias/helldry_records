@@ -3,13 +3,20 @@
 @section('titulo','Cadastro de Artistas')
 
 @section('conteudo')
-<div>
+<div class="container">
+<div class="row">
+    <div class="col-sm-10">
     <h1>Cadastro de Artistas</h1>
+    </div>
+    <div class="col">
+        <x-a href="{{ route('artistas') }}" message="Voltar" cor="secondary"></x-a>
+    </div>
+    </div>
     <form method="post" action="{{route('artistas.salvar')}}" enctype="multipart/form-data">
 
      <x-input type="text" placeholder="Nome" name="nome" id="nome" maxlength="64"></x-input>
 
-     <label for="dt_nascimento">Data de Nascimento:</label>
+     <label for="dt_nascimento" class="form-label">Data de Nascimento:</label>
      <x-input type="date" name="dt_nascimento" id="dt_nascimento"></x-input>
 
      <x-input type="text" placeholder="Nacionalidade" name="nacionalidade" id="nacionalidade" maxlength="32"></x-input>
@@ -23,11 +30,10 @@
 
      <x-input type="hidden" name="status" value="1" id="status"></x-input>
 
-      {{ csrf_field() }}
+     {{ csrf_field() }}
+     <x-button message="Salvar" type="submit"></x-button>
 
-      <x-button message="Salvar" type="submit"></x-button>
     </form>
 </div>
-<x-a href="{{ route('artistas') }}" message="Voltar"></x-a>
-<x-a href="{{ route('logout') }}" message="Logout"></x-a>
+
 @endsection

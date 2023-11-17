@@ -8,3 +8,6 @@
     <title>@yield('titulo')</title>
 </head>
 <body>
+@if (Route::currentRouteName() != 'login')
+<x-navbar></x-navbar>
+@endif

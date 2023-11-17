@@ -3,7 +3,7 @@
 @section('titulo','Login')
 
 @section('conteudo')
-<div>
+<div class="container">
     <h1>Login</h1>
 <form action="{{route('login.verificar')}}" enctype="multipart/form-data" method="post">
     <x-input type="text" placeholder="Usuario" name="usuario" id="usuario"></x-input>

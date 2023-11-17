@@ -7,6 +7,7 @@
     value="{{ $value }}"
     maxlength="{{ $maxlength }}"
     required
+    class="form-control"
   />
 <br>
 

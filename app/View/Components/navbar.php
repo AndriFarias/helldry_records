@@ -6,19 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class a extends Component
+class navbar extends Component
 {
     /**
      * Create a new component instance.
      */
-    public $message;
-    public $href;
-    public $cor;
-    public function __construct($message = null, $href = null, $cor= 'primary')
+    public function __construct()
     {
-        $this->message = $message;
-        $this->href = $href;
-        $this->cor = $cor;
+        //
     }
 
     /**
@@ -26,6 +21,6 @@ class a extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.a');
+        return view('components.navbar');
     }
 }

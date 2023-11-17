@@ -3,13 +3,20 @@
 @section('titulo','Editar Artista')
 
 @section('conteudo')
-<div>
-    <h1>Editar Artista</h1>
+<div class="container"> 
+    <div class="row">
+    <div class="col-sm-10">
+        <h1>Editar Artista</h1>
+    </div>
+    <div class="col">
+        <x-a href="{{ route('artistas') }}" message="Voltar" cor="secondary"></x-a>
+    </div>
+    </div>
     <form method="post" action="{{route('artistas.atualizar',$reg->id)}}" enctype="multipart/form-data">
 
      <x-input type="text" placeholder="Nome" name="nome" id="nome" maxlength="64" value="{{$reg->nome}}"></x-input>
 
-     <label for="dt_nascimento">Data de Nascimento:</label>
+     <label for="dt_nascimento" class="form-label">Data de Nascimento:</label>
      <x-input type="date" name="dt_nascimento" id="dt_nascimento" value="{{$reg->dt_nascimento}}"></x-input>
 
      <x-input type="text" placeholder="Nacionalidade" name="nacionalidade" id="nacionalidade" maxlength="32" value="{{$reg->nacionalidade}}"></x-input>
@@ -24,15 +31,15 @@
 
      
      <input type="radio" name="status" value="1" id="statusOn" {{ $reg->status == 1 ? 'checked' : '' }}></input>
-     <label for="statusOn">Ativo</label>
+     <label for="statusOn" class="form-label">Ativo</label>
      <input type="radio" name="status" value="0" id="statusOff" {{ $reg->status == 0 ? 'checked' : '' }}></input>
-     <label for="statusOff">Inativo</label>
+     <label for="statusOff" class="form-label">Inativo</label>
 
       {{ csrf_field() }}
       <input type="hidden" name="_method" value="put">
       <x-button message="Atualizar" type="submit"></x-button>
     </form>
 </div>
-<x-a href="{{ route('artistas') }}" message="Voltar"></x-a>
-<x-a href="{{ route('logout') }}" message="Logout"></x-a>
+
+
 @endsection
