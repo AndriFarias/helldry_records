@@ -5,10 +5,10 @@
 @section('conteudo')
 <div class="container">
     <div class="row">
-        <div class="col-sm-10">
-    <h1>Lista de Artistas</h1>
+        <div class="col-sm-10 mt-4 mb-3">
+    <h1 class="display-5">Lista de Artistas</h1>
     </div>
-    <div class="col">
+    <div class="col mt-5">
     <x-a href="{{ route('artistas.cadastrar') }}" cor="success" message="Cadastrar"></x-a>
     </div>   
 </div>

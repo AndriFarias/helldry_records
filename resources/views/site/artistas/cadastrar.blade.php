@@ -6,13 +6,13 @@
 <div class="container">
 <div class="row">
     <div class="col-sm-10">
-    <h1>Cadastro de Artistas</h1>
+    <h1 class="display-5">Cadastro de Artistas</h1>
     </div>
-    <div class="col">
+    <div class="col mt-3">
         <x-a href="{{ route('artistas') }}" message="Voltar" cor="secondary"></x-a>
     </div>
     </div>
-    <form method="post" action="{{route('artistas.salvar')}}" enctype="multipart/form-data">
+    <form method="post" action="{{route('artistas.salvar')}}" enctype="multipart/form-data" class="mb-5">
 
      <x-input type="text" placeholder="Nome" name="nome" id="nome" maxlength="64"></x-input>
 
@@ -28,10 +28,10 @@
         @enderror
      <x-input type="text" placeholder="Telefone" name="telefone" id="telefone" maxlength="32"></x-input>
 
-     <x-input type="hidden" name="status" value="1" id="status"></x-input>
-
+     <x-button message="Salvar" type="submit" cor="success"></x-button>
+     
      {{ csrf_field() }}
-     <x-button message="Salvar" type="submit"></x-button>
+     <x-input type="hidden" name="status" value="1" id="status"></x-input>
 
     </form>
 </div>

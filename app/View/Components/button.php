@@ -13,10 +13,12 @@ class button extends Component
      */
     public $type;
     public $message;
-    public function __construct($type = null, $message = null)
+    public $cor;
+    public function __construct($type = null, $message = null, $cor = "primary")
     {
         $this->type = $type;
         $this->message = $message;
+        $this->cor = $cor;
     }
 
     /**
