@@ -9,6 +9,9 @@
                 <li class="nav-item">
                     <a class="nav-link {{(Route::currentRouteName() == 'artistas')?'active':''}}" aria-current="page" href="{{ route('artistas') }}">Artistas</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{(Route::currentRouteName() == 'grupos')?'active':''}}" href="{{ route('grupos') }}">Grupos</a>
+                </li>
         </div>
         <ul class="navbar-nav">
                     <li><a class="btn btn-danger" href="{{ route('logout') }}">Logout</a></li>

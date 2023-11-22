@@ -20,4 +20,9 @@ class Artista extends Model
         'telefone',
         'status'
     ];
+
+    public function grupos()
+    {
+        return $this->belongsToMany(Grupo::class, 'grupo_membro', 'artista_id', 'grupo_id');
+    }
 }

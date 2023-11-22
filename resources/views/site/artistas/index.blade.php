@@ -12,7 +12,7 @@
     <x-a href="{{ route('artistas.cadastrar') }}" cor="success" message="Cadastrar"></x-a>
     </div>   
 </div>
-    <div>
+    <div class="mb-5">
     <table class="table">
         <thead>
             <tr>
