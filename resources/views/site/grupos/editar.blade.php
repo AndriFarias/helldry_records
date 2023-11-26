@@ -17,7 +17,7 @@
         @csrf
     
     <label for="nome"  class="form-label">Nome do Grupo:</label>
-    <input type="text" name="nome" id="nome" class="form-control" value="{{$grupo->nome}}">
+    <input type="text" name="nome" id="nome" class="form-control" value="{{$grupo->nome}}" required>
 
     <label for="artistas" class="form-label">Selecione os Artistas:</label>
     <div class="row">

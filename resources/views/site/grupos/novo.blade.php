@@ -15,7 +15,7 @@
 <form action="{{ route('grupos.store') }}" method="POST" class="container">
     
     <label for="nome"  class="form-label">Nome do Grupo:</label>
-    <input type="text" name="nome" id="nome" class="form-control">
+    <input type="text" name="nome" id="nome" class="form-control" required>
 
     <label for="artistas" class="form-label">Selecione os Artistas:</label>
     <div class="row">
@@ -30,6 +30,7 @@
         </div>
         @endforeach
     </div>
+    <label for="status"  class="form-label">Status do Grupo:</label>
         <div class="form-check">
             <input type="radio" name="status" value="2" id="statusDebut" class="form-check-input">
             <label for="statusDebut" class="form-check-label">Debutou</label>

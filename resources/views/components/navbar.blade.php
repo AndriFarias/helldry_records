@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg mb-3" style="background-color: #701a75;" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg {{(Route::currentRouteName() != 'artistas') ? 'mb-3' : ''}}" style="background-color: #701a75;" data-bs-theme="dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Helldry Records</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

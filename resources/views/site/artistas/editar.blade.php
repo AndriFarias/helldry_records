@@ -12,7 +12,7 @@
         <x-a href="{{ route('artistas') }}" message="Voltar" cor="secondary"></x-a>
     </div>
     </div>
-    <form method="post" action="{{route('artistas.atualizar',$reg->id)}}" enctype="multipart/form-data" class="mb-5">
+    <form method="post" action="{{route('artistas.atualizar',$reg->id)}}" enctype="multipart/form-data" class="mb-3">
 
      <x-input type="text" placeholder="Nome" name="nome" id="nome" maxlength="64" value="{{$reg->nome}}"></x-input>
 
@@ -36,7 +36,7 @@
      {{ csrf_field() }}
      <input type="hidden" name="_method" value="put">
      <div class="mt-3">
-     <x-button message="Atualizar" type="submit" cor="success"></x-button>
+     <x-button message="Atualizar" type="submit" cor="warning"></x-button>
     </div>
     </form>
 </div>

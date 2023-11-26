@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome',64);
             $table->date('dt_nascimento');
-            $table->string('nacionalidade',32);
+            $table->string('nacionalidade',255);
             $table->string('endereco',256);
             $table->string('email')->unique();
             $table->string('telefone',32);

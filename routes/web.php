@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ArtistaController;
 use App\Http\Controllers\GrupoController;
+use App\Http\Controllers\PdfController;
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/', [LoginController::class, 'store'])->name('login.verificar');
@@ -29,4 +30,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/grupos/visulizar/{id}',[GrupoController::class, 'show'])->name('grupos.visualizar');
     Route::get('/grupos/editar/{id}',[GrupoController::class, 'edit'])->name('grupos.editar');
     Route::put('/grupos/editar/{id}',[GrupoController::class, 'update'])->name('grupos.atualizar');
+    Route::get('/exportar', [PdfController::class, 'generatePDF'])->name('exportar');
+
+    
 });
