@@ -49,9 +49,9 @@ class ArtistaController extends Controller
     
             $dados = $request->all();
             Artista::create($dados);
-            return redirect()->route('artistas');
+            return redirect()->route('artistas')->with('success', 'Artista cadastrado com sucesso!');
         } catch (\Illuminate\Validation\ValidationException $e) {
-            // Aqui você pode lidar com os erros de validação como quiser
+           
             return redirect()->back()->withErrors($e->errors())->withInput();
             
         }
@@ -101,7 +101,7 @@ class ArtistaController extends Controller
     
             $dados = $request->all();
             Artista::find($id)->update($dados);
-            return redirect()->route('artistas');
+            return redirect()->route('artistas')->with('success', 'Artista atualizado com sucesso!');
         } catch (\Illuminate\Validation\ValidationException $e) {
 
             return redirect()->back()->withErrors($e->errors())->withInput();
@@ -114,7 +114,7 @@ class ArtistaController extends Controller
     public function destroy(string $id)
     {
         Artista::find($id)->delete();
-        return redirect()->route('artistas');
+        return redirect()->route('artistas')->with('success', 'Artista excluído com sucesso!');
     }
 }
 

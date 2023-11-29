@@ -49,4 +49,7 @@
         </div>
     </div>
 </div>
+@if(session()->has('success'))
+ <x-toast></x-toast>
+@endif
 @endsection

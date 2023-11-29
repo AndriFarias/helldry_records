@@ -38,7 +38,7 @@ class GrupoController extends Controller
         $novoGrupo = Grupo::create($dadosGrupo);
         $novoGrupo->artistas()->attach($artistasSelecionados);
         
-        return redirect()->route('grupos');
+        return redirect()->route('grupos')->with('success', 'Grupo cadastrado com sucesso!');
     }
 
     /**
@@ -87,7 +87,7 @@ class GrupoController extends Controller
         $grupo = Grupo::findOrFail($id);
         $grupo->artistas()->sync($artistasSelecionados);
         
-        return redirect()->route('grupos')->with('success', 'Grupo atualizado com sucesso');
+        return redirect()->route('grupos')->with('success', 'Grupo atualizado com sucesso!');
     }
 
     /**
